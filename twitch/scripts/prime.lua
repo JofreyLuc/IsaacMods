@@ -1,6 +1,5 @@
 local Prime = RegisterMod("Prime", 1)
 local PrimeItem = Isaac.GetItemIdByName("Prime")
---local PrimeCostume = Isaac.GetCostumeIdByPath("gfx/Characters/prime.anm2")
 
 local has = false
 local rngInit = true
@@ -35,10 +34,17 @@ function Prime:onUpdate()
 end
 
 function Prime:onNewFloor()
+  -- Each floor : spawns 2 random trinkets
   if has then
-    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, TrinketType.TRINKET_SWALLOWED_PENNY , Vector(320,300), Vector(0,0), nil)
+    itemPool = game:GetItemPool()
+    for i = 1, 2 do
+      trink = itemPool:GetTrinket()
+      Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, trink , Vector(213 * i,200), Vector(0,0), nil)
+      itemPool:RemoveTrinket(trink)
+    end
   end
 end
 
 
 Prime:AddCallback(ModCallbacks.MC_POST_UPDATE, Prime.onUpdate)
+Prime:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, Prime.onNewFloor)
