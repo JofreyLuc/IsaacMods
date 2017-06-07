@@ -1,0 +1,12 @@
+<ItemPools>
+	<Pool Name="treasure">
+		<Item Name="Bits" Weight="1" DecreaseBy="0.5" RemoveOn="0.1"/>
+	</Pool>
+	<Pool Name="greedTreasure">
+		<Item Name="Bits" Weight="1" DecreaseBy="0.5" RemoveOn="0.1"/>
+		<Item Name="Prime" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	</Pool>
+	<Pool Name="shop">
+		<Item Name="Prime" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	</Pool>	
+</ItemPools>

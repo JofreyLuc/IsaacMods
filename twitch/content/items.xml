@@ -1,0 +1,4 @@
+<items gfxroot="gfx/items/" version="1">
+	<passive cache="luck" description="Your hard-earned reward" gfx="bits.png" name="Bits" />
+	<passive description="Prime!" gfx="prime.png" name="Prime" />
+</items>

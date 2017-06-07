@@ -1,0 +1,3 @@
+<costumes anm2root="gfx/Characters/">
+	<costume anm2path="bits.anm2" name="bitscostume" hasSkinAlt="true" priority="24" type="none"/>
+</costumes>    
